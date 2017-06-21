@@ -1,9 +1,9 @@
-##JavaScript 连续赋值的坑
+## JavaScript 连续赋值的坑
 
 来自于
 https://www.w3cschool.cn/vnpqd/vnpqd-ux8c25rv.html
 
-####导语：
+#### 导语：
  > 这个问题是在W3C上学习的时候看到的，在这里要注意的重点是：
  
  >1.运算符的优先级问题。
