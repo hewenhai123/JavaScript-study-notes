@@ -57,7 +57,11 @@ console.log(b.x);
 
 ```$xslt
    继续（向右）执行代码 a.x=a,这时会认为是给对象B也新增了一个属性x
-   但是实际并非如此，a.x=a是将的a的值赋值给a.x,现在的a.x的引用地址是A，所以相当于a.x={n:2},
+ 
+   但是实际并非如此 
+   (由于.  运算符最先计算,一开始js已经先计算了a.x，便已经解析了这个a.x是对象A的x，
+   所以在同一条公式的情况下再回来给a.x赋值，也不会说重新解析这个a.x为对象B的x。)，
+   a.x=a是将的a的值赋值给a.x,现在的a.x的引用地址是A，所以相当于a.x={n:2},
    可以理解为A的属性x指向了对象B
 ```
 ![Mou icon](./img/3.png)
@@ -71,9 +75,22 @@ console.log(b.x);
 而在console.log(b.x)的时候，由于b.x表示对象A的x属性，该属性是指向对象B，
 自然也输出了[object Object]了，注意这里的[object Object]可不是2个对象的意思，
 对象的字符串形式，是隐式调用了Object对象的toString()方法，形式是："[object Object]"。
-所以[object Object]表示的就只是一个对象罢了:)
+所以[object Object]表示的就只是一个对象罢了
 ```
 
+###代码执行顺序：不要怀疑下面的代码没有错
+
+```$xslt
+1. var a={n:1} ---> 引用地址1xxxxx  对象A ->{n:1}
+2. var b=a     ---> 引用地址1xxxxx  对象A
+ 
+ a.x=a={n:2}  (*从右到左*)
+3. a.x  （点优先执行）      --->引用地址1xxxxx 对象A ->{n:1,x:'undefined'}
+4. a={n:2}                --->引用地址2xxxxx 对象B ->{n:2}
+5. a.x=a  (已经解析过地址仍然是A) --->引用地址1xxxxx 对象A ->A.x=a ->A.x=a=B ->A.x={n:1}
+console.log(a.x)--->undefined
+ 
+```
 
 
 
