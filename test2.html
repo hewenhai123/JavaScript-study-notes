@@ -1,4 +1,4 @@
-<!doctype html>
+<!Doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,34 +12,43 @@
 </body>
 
 <script type="text/javascript">
-    var str = "2017-1-15";
-    dateList(str, "15", "28", 0);
-    function dateList(str, minDate, maxDate, incNum) {
-        minDate = minDate < 10 ? "0" + minDate : minDate;
-        var deadLine = str.split("-"), dateList = [], temp = 0;
-        for (var i = 0; i < 6; i++) {
-            var date1 = "", date2 = "";
-            if ((deadLine[1] * 1 + i) > 12) {
-                temp = temp++ < 10 ? "0" + temp : temp;
-                date1 = (deadLine[0] * 1 + 1) + "-" + temp + "-" + minDate;
-                date2 = (deadLine[0] * 1 + 1) + "-" + temp + "-" + maxDate;
-                date2 = incNum > 0 ? chinaIncrease(date2, incNum) : date2;
-            } else {
-                date1 = deadLine[0] + "-" + (deadLine[1] * 1 + i) + "-" + minDate;
-                date2 = deadLine[0] + "-" + (deadLine[1] * 1 + i) + "-" + maxDate;
-                date2 = incNum > 0 ? chinaIncrease(date2, incNum) : date2;
-            }
-            dateList[dateList.length] = date1;
-            dateList[dateList.length] = date2;
-        }
-        console.log(dateList)
-    }
-    function chinaIncrease(date, incNum) {
-        var formatDate = date.replace(/\-/g, "/");
-        formatDate = new Date(new Date(formatDate).getTime() + incNum * 24 * 60 * 60 * 1000);
-        formatDate = formatDate.getFullYear() + "-" + (formatDate.getMonth() * 1 + 1) + "-" + (formatDate.getDate() < 10 ? "0" + formatDate.getDate() : formatDate.getDate());
-        return formatDate;
-    }
+    //    var str = "2017-1-15";
+    //    dateList(str, "15", "28", 0);
+    //    function dateList(str, minDate, maxDate, incNum) {
+    //        minDate = minDate < 10 ? "0" + minDate : minDate;
+    //        var deadLine = str.split("-"), dateList = [], temp = 0;
+    //        for (var i = 0; i < 6; i++) {
+    //            var date1 = "", date2 = "";
+    //            if ((deadLine[1] * 1 + i) > 12) {
+    //                temp = temp++ < 10 ? "0" + temp : temp;
+    //                date1 = (deadLine[0] * 1 + 1) + "-" + temp + "-" + minDate;
+    //                date2 = (deadLine[0] * 1 + 1) + "-" + temp + "-" + maxDate;
+    //                date2 = incNum > 0 ? chinaIncrease(date2, incNum) : date2;
+    //            } else {
+    //                date1 = deadLine[0] + "-" + (deadLine[1] * 1 + i) + "-" + minDate;
+    //                date2 = deadLine[0] + "-" + (deadLine[1] * 1 + i) + "-" + maxDate;
+    //                date2 = incNum > 0 ? chinaIncrease(date2, incNum) : date2;
+    //            }
+    //            dateList[dateList.length] = date1;
+    //            dateList[dateList.length] = date2;
+    //        }
+    //        console.log(dateList)
+    //    }
+    //
+    //
+    //
+    //    function chinaIncrease(date, incNum) {
+    //        var formatDate = date.replace(/\-/g, "/");
+    //        formatDate = new Date(new Date(formatDate).getTime() + incNum * 24 * 60 * 60 * 1000);
+    //        formatDate = formatDate.getFullYear() + "-" + (formatDate.getMonth() * 1 + 1) + "-" + (formatDate.getDate() < 10 ? "0" + formatDate.getDate() : formatDate.getDate());
+    //        return formatDate;
+    //    }
+
+
+
+
+
+
 
 
 </script>
