@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>冒泡排序算法</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    var ary = [5, 7, 3, 2, 4, 6, 8, 90, 102, 43, 11, 22, 21, 435];
+    function bobbleSort(ary) {
+        var aryLegth = ary.length;
+//        每一次外部for循环，循环一次，内部的for循环都会对数组的当前向和后一项
+//        进行一轮比较，每一次比较都会把较大的数向后排，这样外围的for循环多少次内部
+//        for循环就执行多少次，从而完成冒泡排序
+        for (var i = 0; i < aryLegth; i++) { //这个for循环所控制的一共需要循环多少次
+            for (var y = 0; y < aryLegth - 1; y++) {//因为第一个数不用和自己相比，所以总的循环次数是的length-1
+//                console.log(ary[y])
+                if (ary[y] > ary[y + 1]) {
+                    var temp = ary[y];
+                    ary[y] = ary[y + 1];
+                    ary[y + 1] = temp;
+                }
+            }
+        }
+        console.log(ary)
+    }
+    bobbleSort(ary)
+
+
+    //改进版冒泡排序
+    var ary2 = [2, 1, 1, 2, 2, 3, 4, 5, 56, 67, 67, 65, 90];
+    function bobbSort2(ary) {
+        var aryLength = ary.length;
+        for (var i = 0; i < aryLength; i++) {
+            for (var y = 0; y < aryLength - 1 - i; y++) {
+                //在这里减去进行循环的次数，这样内部的for循环的次数就会越来越少，以减少性能消耗
+                if (ary[y] > ary[y + 1]) {
+                    var temp = ary[y];
+                    ary[y] = ary[y + 1];
+                    ary[y + 1] = temp;
+                }
+            }
+        }
+        console.log(ary)
+    }
+  bobbSort2(ary2)
+
+</script>
+
+</body>
+</html>
