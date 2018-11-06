@@ -41,6 +41,40 @@ var result = twinkleStar.replace(starRegex,function(a,b,c,d){
 
 
 
+var array = [];
+(function createArray(size) {
+    array.push(+(Math.random() * 100).toFixed(0));
+    return (size > 1) ? createArray(size - 1) : undefined;
+})(12);
+console.log(array);
+bubbleSort(array);
+function bubbleSort(ary) {
+for(var i=0;i<ary.length-1;i++){
+    for(var y=0;y<ary.length-1-i;y++){
+        if(ary[y]>ary[y+1]){
+            var temp=ary[y+1];
+            ary[y+1]=ary[y];
+            ary[y]=temp
+        }
+
+    }
+
+
+
+}
+
+
+
+
+console.log(ary);
+
+    // change code above this line
+    return ary;
+}
+
+
+
+
 
 
 </script>

@@ -1,0 +1,22 @@
+### 冒泡排序
+
+```javascript
+function bubbleSort(ary){
+    for(var i=0;i<ary.length-1;i++){
+        //第一层循环到表一共要循环的次数
+        for(var y=0;y<ary.length-1-i;y++){
+            //从第一个开始进行和下一个对比
+            if(ary[y]>ary[y+1]){
+              var temp=ary[y];
+              ary[y]=ary[y+1];
+              ary[y+1]=temp
+            }
+        }
+    }
+}
+
+
+```
+
+
+
