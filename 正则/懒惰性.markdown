@@ -1,0 +1,22 @@
+
+### 正则捕获的懒惰性
+~~~
+在正则捕获阶段，由于正则是懒惰性，只会捕获到第一个匹配的结果。
+要解决正则捕获的懒惰性需要在正则结尾添加 修饰符 g。
+~~~
+
+```javascript
+//懒惰性
+var twinkleStar = "TwinkleStar,twinkleStar,TwinkleStar";
+var starRegex = /Twinkle/;
+var result = twinkleStar.match(starRegex);
+console.log(result) // -> ["Twinkle"]
+```
+
+```javascript
+//解决懒惰性 并且忽略大小写
+var twinkleStar = "TwinkleStar,twinkleStar,TwinkleStar";
+var starRegex = /Twinkle/ig;
+var result = twinkleStar.match(starRegex);
+console.log(result) // -> ["Twinkle","twinkle","Twinkle"]
+```

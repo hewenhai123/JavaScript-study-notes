@@ -1,0 +1,15 @@
+### 通配符 ·
+
+~~~
+ 通配符 . 将匹配任意的字符，通配符也可以成为dot和period。
+ 例如，如果你想匹配“hug”，“huh”，“hut”，“hum”，
+ 可以使用正则表达式 /hu./ 来匹配这所有四个字。
+~~~
+
+```javascript
+var humStr = "I'll hum a song";    
+var hugStr = "Bear hug";    
+var huRegex = /hu./;    
+humStr.match(huRegex); //返回["hum"]    
+hugStr.match(huRegex); //返回["hug"]
+```
