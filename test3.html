@@ -46,21 +46,17 @@ var array = [];
     array.push(+(Math.random() * 100).toFixed(0));
     return (size > 1) ? createArray(size - 1) : undefined;
 })(12);
-console.log(array);
+//console.log(array);
 bubbleSort(array);
 function bubbleSort(ary) {
 for(var i=0;i<ary.length-1;i++){
     for(var y=0;y<ary.length-1-i;y++){
-        if(ary[y]>ary[y+1]){
-            var temp=ary[y+1];
-            ary[y+1]=ary[y];
-            ary[y]=temp
+        var cur=ary[y],next=ary[y+1];
+        if(cur>next){
+            ary[y]=[next,ary[y+1]=cur][0];
         }
 
     }
-
-
-
 }
 
 
