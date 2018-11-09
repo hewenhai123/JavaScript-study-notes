@@ -1,0 +1,51 @@
+### 选择排序
+
+~~~
+和冒泡排序的区别：
+
+冒泡：
+在内层循环时做了多次的数据交换操作，通过多次交换的方式把最大的
+交换到最后。
+
+选择：
+在内层循环时对大小进行对比，并保存小的索引，
+在外层循环对外层的i项和内层的循环项保存下来的最小项进行位置的交换
+
+
+减少数据交换的次数题号效率
+
+~~~
+
+
+```javascript
+var len=ary.length;
+for(var i=0;i<len;i++){
+    var min=i;
+    for(var y=i+1;y<len;y++){
+        if(ary[min]>ary[y]){
+            min=y;
+        }
+        if(min!=i){
+            var temp=ary[i];
+            ary[i]=ary[min];
+            ary[min]=temp
+        }
+    } 
+}
+return ary
+
+
+
+
+
+
+```
+
+
+
+
+
+
+
+
+

@@ -49,16 +49,30 @@ var array = [];
 //console.log(array);
 bubbleSort(array);
 function bubbleSort(ary) {
-for(var i=0;i<ary.length-1;i++){
-    for(var y=0;y<ary.length-1-i;y++){
-        var cur=ary[y],next=ary[y+1];
-        if(cur>next){
-            ary[y]=[next,ary[y+1]=cur][0];
+//for(var i=0;i<ary.length-1;i++){
+//    for(var y=0;y<ary.length-1-i;y++){
+//        var cur=ary[y],next=ary[y+1];
+//        if(cur>next){
+//            ary[y]=[next,ary[y+1]=cur][0];
+//        }
+//
+//    }
+//}
+    for(var i=0;i<ary.length;i++){
+        var min=i;
+        for(var y=i+1;y<ary.length;y++){
+            if(ary[min]>ary[y]){
+                min=y;
+            }
+            if(min!=i){
+                var temp=ary[i];
+                ary[i]=ary[min];
+                ary[min]==temp;
+            }
         }
 
+        return ary
     }
-}
-
 
 
 
